@@ -1,8 +1,3 @@
-// src/socket.js
 import { io } from "socket.io-client";
-
-const socket = io("http://localhost:4000", {
-  transports: ["websocket"],
-});
-
+const socket = io("https://pyxionary.onrender.com"); // URL de tu backend en Render
 export default socket;
