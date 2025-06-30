@@ -5,9 +5,14 @@ const { Server } = require('socket.io');
 
 const app = express();
 
-// Configuración CORS solo para el frontend de Vercel
+// Permitir ambos dominios de Vercel (producción y previsualización)
+const allowedOrigins = [
+  "https://pixyonary.vercel.app",
+  "https://pixyonary-6046s9jg3-isais-projects-6f90e345.vercel.app"
+];
+
 app.use(cors({
-  origin: ["https://pixyonary.vercel.app"],
+  origin: allowedOrigins,
   methods: ["GET", "POST"]
 }));
 
@@ -15,7 +20,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://pixyonary.vercel.app"],
+    origin: allowedOrigins,
     methods: ["GET", "POST"]
   }
 });
