@@ -1,3 +1,8 @@
 import { io } from "socket.io-client";
-const socket = io("https://pyxionary.onrender.com"); // URL de tu backend en Render
+
+const socket = io("https://pyxionary.onrender.com", {
+  transports: ["websocket"],
+  withCredentials: false
+});
+
 export default socket;
