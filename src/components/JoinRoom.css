@@ -1,0 +1,96 @@
+/* Fondo y panel principal */
+.join-panel {
+  background: rgba(255,255,255,0.97);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(58,141,222,0.15);
+  border: 4px solid #3a8dde;
+  max-width: 420px;
+  width: 100%;
+  padding: 36px 28px 28px 28px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.join-title {
+  font-size: 2rem;
+  font-family: 'Luckiest Guy', cursive, sans-serif;
+  color: #2176ae;
+  margin-bottom: 18px;
+  text-shadow: 2px 2px 8px #b3e0fc;
+}
+
+.join-label {
+  color: #2176ae;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  display: block;
+  text-align: left;
+}
+
+.join-input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid #3a8dde;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  outline: none;
+  transition: border 0.2s;
+  background: #f7fbff;
+}
+.join-input:focus {
+  border-color: #2176ae;
+}
+
+.join-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #2176ae 0%, #3a8dde 100%);
+  color: #fff;
+  font-family: 'Luckiest Guy', cursive, sans-serif;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 0;
+  box-shadow: 0 2px 8px rgba(58,141,222,0.10);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 10px;
+}
+.join-btn:hover {
+  background: linear-gradient(90deg, #3a8dde 0%, #2176ae 100%);
+  transform: scale(1.04);
+}
+
+.join-back {
+  background: #fff;
+  color: #2176ae;
+  border: 2px solid #3a8dde;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-family: 'Luckiest Guy', cursive, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(58,141,222,0.07);
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 18px;
+}
+.join-back:hover {
+  background: #3a8dde;
+  color: #fff;
+}
+
+.join-error {
+  color: #e53935;
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.join-character-preview {
+  font-size: 3rem;
+  margin-bottom: 10px;
+} 
