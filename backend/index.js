@@ -5,23 +5,37 @@ const { Server } = require('socket.io');
 
 const app = express();
 
-// Permitir ambos dominios de Vercel (producción y previsualización)
+// Permitir cualquier subdominio de vercel.app y onrender.com
 const allowedOrigins = [
-  "https://pixyonary.vercel.app",
-  "https://pixyonary-6046s9jg3-isais-projects-6f90e345.vercel.app"
+  /\.vercel\.app$/,
+  /\.onrender\.com$/
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
-  methods: ["GET", "POST"]
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.some(re => re.test(origin))) {
+      return callback(null, true);
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
+  methods: ["GET", "POST"],
+  credentials: true
 }));
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins,
-    methods: ["GET", "POST"]
+    origin: function(origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.some(re => re.test(origin))) {
+        return callback(null, true);
+      }
+      callback(new Error('Not allowed by CORS'));
+    },
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
